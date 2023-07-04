@@ -70,7 +70,6 @@ extension SearchRepository {
                 guard let apps = try? JSONDecoder().decode(SearchDTO.self, from: response.data) else { return }
                 completion(.success(apps.toDomain()))
             case .failure(let error):
-                print(error)
                 completion(.failure(error))
             }
         }

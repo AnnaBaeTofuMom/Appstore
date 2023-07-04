@@ -92,8 +92,6 @@ class SearchResultViewController: UIViewController {
         
         viewModel.appList
             .bind(to: appCollectionView.rx.items(cellIdentifier: "list", cellType: AppCollectionViewCell.self)) { (row, item, cell) in
-                // 각 셀에 대한 구성 설정
-                print("cell \(Thread.isMainThread)")
                 cell.header.nameLabel.text = item.trackName
                 cell.header.descLabel.text = item.description
                 cell.header.rateLable.text = "★ " + ( item.averageUserRating?.description ?? "")
